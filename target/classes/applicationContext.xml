@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="io" class="app.view.UIengine" />
+
+    <bean id="ui" class="app.view.UIview"/>
+
+    <bean id="dto" class="app.dto.DataEngine"/>
+
+   <!-- <bean id="dao" class="app.dao.Order" >
+        <constructor-arg ref="dto" />
+        <constructor-arg ref="io" />
+    </bean>-->
+
+   <bean id="ioi" class="app.view.UIengine" >
+
+    </bean>
+
+    <bean id="controller" class="app.controller.Controller">
+        <constructor-arg ref="dto" />
+        <constructor-arg ref="ui" />
+    </bean>
+
+
+</beans>
